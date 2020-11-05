@@ -15,6 +15,8 @@
 // Main
 using System;
 
+namespace HauntedHouseApp
+
 static void Main(string[] args)
 {
     Console.Writeline("Welcome to The Dark House, a Choose-Your-Own-Adventure story!");
