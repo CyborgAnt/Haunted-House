@@ -32,7 +32,7 @@ static void Main(string[] args)
     {
         if(pageTurn == 'c') or if(pageTurn == 'C'){
             // begin the search
-            houseFirstFloor();
+            // class?
         } else if(pageTurn == 'q') or if(pageTurn == 'Q'){
             // end the program
             break;
