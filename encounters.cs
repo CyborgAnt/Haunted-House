@@ -1,19 +1,22 @@
 using System;
+using HouseStory;
 
 // encounters
-public class encounters
+public class Encounters
 {
-    public int trappedCloset()
+    public void trappedCloset()
     {
         // initializing variables for the encounter
-        var int playerRoll = 0;
+        int playerRoll = 0;
+        int closetRoll = 0;
+        var rand = new Random();
 
         Console.WriteLine("As you open the closet door, you see a ghostly hand reach for you!");
-        Console.WriteLine("Pick a number between 1 and 20, to see if you dodge this hand...: ");
-        playerRoll = Console.ReadLine();
-        int closetRoll = random.Next(1, 21);       // SHOULD generate a random number between 1 and 20
+        Console.WriteLine("Pick a number between 1 and 20, to see if you dodge the hand...: ");
+        playerRoll = Int32.Parse(Console.ReadLine());
+        closetRoll = rand.Next(1, 21);       // SHOULD generate a random integer between 1 and 20
 
-        if(playerRoll >= closetRoll)
+        if(playerRoll > closetRoll)
         {
             handSurvived();
         } else if((playerRoll - closetRoll) <= -5) {
@@ -27,11 +30,13 @@ public class encounters
     public void handDeath()
     {
         Console.WriteLine("You try to dodge the hand but it is too quick. It latches onto your face. Black, smoky tendrils erupt from the hand and wrap around your head. You sink to the ground as your life essence is drained away. You hear a deep, sinister laughter accompanying you into darkness....");
-        // need a 'Break'?
+        System.Environment.Exit(0);    // is this right?
     }
     public void handPassedThrough()
     {
-        Console.WriteLine("The hand reaches for your chest... and passes through it. There was no physical effects but you are pretty frightened afterwards. You hear, in the distance, a low, ominous chuckle. You continue on.\n");
+        Console.WriteLine("The hand reaches for your chest... and passes through it. There were no physical effects but you are pretty shaken up. You hear, in the distance, a low, ominous chuckle. You continue on.");
+        var hallReturn = new FirstFloor();
+        hallReturn.mainHall();
         // need a Break?
     }
     public void handSurvived()
