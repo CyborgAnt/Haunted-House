@@ -2,7 +2,7 @@ using System;
 using HouseStory;
 
 // encounters
-public class Encounters
+public class Haunts
 {
     public void trappedCloset()
     {
@@ -36,13 +36,13 @@ public class Encounters
     {
         Console.WriteLine("The hand reaches for your chest... and passes through it. There were no physical effects but you are pretty shaken up. You hear, in the distance, a low, ominous chuckle. You continue on.");
         var hallReturn = new FirstFloor();
-        hallReturn.mainHall();
+        FirstFloor.hall();
         // need a Break?
     }
     public void handSurvived()
     {
         Console.WriteLine("The hand reaches for you... but you manage to dodge to one side. It passes through the wall of the hallway, and disappears. You hear a short but low chuckle from... somewhere. You decide what to do next: ");
-        hallway();
+        FirstFloor.hall();
         // test this decision
     }
 

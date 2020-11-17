@@ -1,0 +1,4 @@
+F:\Haunted_House\obj\Debug\netcoreapp3.1\Haunted_House.csprojAssemblyReference.cache
+F:\Haunted_House\obj\Debug\netcoreapp3.1\Haunted_House.AssemblyInfoInputs.cache
+F:\Haunted_House\obj\Debug\netcoreapp3.1\Haunted_House.AssemblyInfo.cs
+F:\Haunted_House\obj\Debug\netcoreapp3.1\Haunted_House.csproj.CoreCompileInputs.cache
