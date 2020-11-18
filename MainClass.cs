@@ -10,10 +10,6 @@ namespace HouseStory
 {
     class FirstFloor
     {
-        /*public FirstFloor()
-        {
-        } */
-
         public static void entryway()
         {
             Console.WriteLine("You start in a small entryway. There are a couple of small end tables in the entry, with pictures and and flowers on them.");
@@ -90,10 +86,11 @@ namespace HouseStory
                     bedroom();
                     break;
                 case 2:
-                    masterbedroom();
+                    masterBedroom();
                     break;
                 case 3:
                     entryway();
+                    break;
                 default:
                     break;
             }
@@ -161,7 +158,7 @@ namespace HouseStory
             }
         }
 
-        static void smallerHall()
+        public static void smallerHall()
         {
             WriteLine("You move down the smaller hallway to the right.");
             WriteLine("It's a wider but shorter path, compared to the main hallway. Some simple artwork dot both sides of the hall. On the left side of the hall, there is a broken door that looks in on the kitchen. On the right side, there is another broken door, this one leading into the Living Room. Ahead of you, the hall ends at a door that leads to the outside.");
@@ -199,7 +196,7 @@ namespace HouseStory
             var bedroom1Search = 0;
 
             Console.WriteLine("What would you like to do?");
-            Console.WriteLine("1. Investigate the Bed, 2.Investigate the Left Closet, 3.Investigate the Right Closet, 4.Investigate the Dresser, 5.Leave the Bedroom.");
+            Console.WriteLine("1. Investigate the Left Closet, 2.Investigate the Right Closet, 3.Investigate the Dresser, 4.Leave the Bedroom.");
 
             bedroom1Search = Int32.Parse(ReadLine());
 
@@ -207,27 +204,30 @@ namespace HouseStory
             {
                 case 1:
                     // nothing
+                    WriteLine("You find nothing of interest in the closet.");
                     break;
                 case 2:
                     // nothing
+                    WriteLine("You find nothing of interest in the closet.");
                     break;
                 case 3:
                     // not sure
+                    WriteLine("You don't find anything on top of the dresser. As you check the top drawer, you find a picture frame. The picture inside is of a auburn-haired woman, of average build but tall-appearing, sitting in a chair, with a warm smile on her face. Standing behind the chair is a dark haired, tall, thin man, grinning at the camera. A word and a date are written below:");
+                    WriteLine("Before, 7/5/20");
+                    WriteLine("You take the picture frame.");
+                    bedroom();
                     break;
                 case 4:
-                    // gun in box 
-                    break;
-                case 5:
                     WriteLine("You leave the bedroom.");
                     // double-check Map
-                    break;           
+                    break;         
                 default:
                     bedroom();
                     break;
             }
         }
 
-        public static void masterBedoom()
+        public static void masterBedroom()
         {
             WriteLine("You enter a bedroom that might be as large as some apartments - the Master Bedroom.");
             WriteLine("There is a King-sized bed in the center of the room, with dark blue sheets, a blue and black comforter, and many pillows. Looking from the doorway, there is a large window on the right wall and a floor-to-near ceiling window on the wall opposite from you.");
@@ -245,7 +245,7 @@ namespace HouseStory
                 case 1:
                     // closet
                     WriteLine("You check the walk-in closet. There isn't much in there of interest.");
-                    masterBedoom();
+                    masterBedroom();
                     break;
                 case 2:
                     // Wardrobe - BODY
@@ -260,9 +260,7 @@ namespace HouseStory
 
         }
 
-
-
-        static void kitchen()
+        public static void kitchen()
         {
             var kitchenChoice = 0;
 
@@ -278,33 +276,9 @@ namespace HouseStory
             //switch and cases: herring/descr., gd, bd, avg, flavor
 
             Searches.KitchenSearch.kitchenSearch(kitchenChoice);
-
+        }
     }
-
-    class Basement
-    {
-        public static void stairs()
-        {
-            //Choices: Laundry-Right, Guest Room-Left, Entertainment Room-Ahead
-        }
-        public static void guestRoom()
-        {
-            //Pictures of Family; kids not present
-        }
-        public static void laundryRoom()
-        {
-            //nothing of importance
-        }
-        public static void entertainmentRoom()
-        {
-            //Safe - GUN, code in Yellow Glow Kitchen room
-            //Bathroom off to side - flavor text
-        }
-        
-    }
-
-
-
+    
     class MainClass
     {
         public static void Main(string[] args)
@@ -320,53 +294,7 @@ namespace HouseStory
             if (playerChoice != 1)
                 return;
             else
-                entry();
+                FirstFloor.entryway();
         }
-    }
-
-
-
-
-}   
-
-    
-/*
-
-        
-        
-        
-
-
-        }
-        public void masterBedoom()
-        {
-            
-        }
-        public void study()
-        {
-            Console.WriteLine("You open the door to the left of the hallway and enter the room. It appears to be a large study or library.\n There are shelves and shelves of books, books of every size and bindings. There is a very large window that looks out on the neighborhood, to the left.");
-            Console.WriteLine("There are very comfortable-looking chairs throughout the room, as well as benches along the walls.");
-            Console.WriteLine("Do you search the room? ");
-
-            Console.WriteLine("1. Yes.\n
-                            2.No - Leave the Study.\n");
-            var int studySearch = Console.ReadLine();
-
-            switch (studySearch)
-            {
-                case 1:
-                // code
-                case 2:
-                    {
-                        Console.WriteLine("The room is nice, cozy, almost inviting you to sit for a spell... but you resist. You return to the Entry.");
-                        entry();
-                        // maybe code this to return to the Entry Decision, instead
-                    }
-
-            }
-        }
-    }
-
-
-    }
-    */
+    } 
+}    

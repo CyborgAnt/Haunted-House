@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "f:\\Haunted_House\\Haunted_House.csproj": {}
+    "F:\\Haunted_House\\Haunted_House.csproj": {}
   },
   "projects": {
-    "f:\\Haunted_House\\Haunted_House.csproj": {
+    "F:\\Haunted_House\\Haunted_House.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "f:\\Haunted_House\\Haunted_House.csproj",
+        "projectUniqueName": "F:\\Haunted_House\\Haunted_House.csproj",
         "projectName": "Haunted_House",
-        "projectPath": "f:\\Haunted_House\\Haunted_House.csproj",
+        "projectPath": "F:\\Haunted_House\\Haunted_House.csproj",
         "packagesPath": "C:\\Users\\ZuriB\\.nuget\\packages\\",
-        "outputPath": "f:\\Haunted_House\\obj\\",
+        "outputPath": "F:\\Haunted_House\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ZuriB\\AppData\\Roaming\\NuGet\\NuGet.Config",

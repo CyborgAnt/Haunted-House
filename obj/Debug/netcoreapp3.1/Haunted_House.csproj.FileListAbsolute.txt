@@ -2,3 +2,12 @@ F:\Haunted_House\obj\Debug\netcoreapp3.1\Haunted_House.csprojAssemblyReference.c
 F:\Haunted_House\obj\Debug\netcoreapp3.1\Haunted_House.AssemblyInfoInputs.cache
 F:\Haunted_House\obj\Debug\netcoreapp3.1\Haunted_House.AssemblyInfo.cs
 F:\Haunted_House\obj\Debug\netcoreapp3.1\Haunted_House.csproj.CoreCompileInputs.cache
+F:\Haunted_House\bin\Debug\netcoreapp3.1\Haunted_House.exe
+F:\Haunted_House\bin\Debug\netcoreapp3.1\Haunted_House.deps.json
+F:\Haunted_House\bin\Debug\netcoreapp3.1\Haunted_House.runtimeconfig.json
+F:\Haunted_House\bin\Debug\netcoreapp3.1\Haunted_House.runtimeconfig.dev.json
+F:\Haunted_House\bin\Debug\netcoreapp3.1\Haunted_House.dll
+F:\Haunted_House\bin\Debug\netcoreapp3.1\Haunted_House.pdb
+F:\Haunted_House\obj\Debug\netcoreapp3.1\Haunted_House.dll
+F:\Haunted_House\obj\Debug\netcoreapp3.1\Haunted_House.pdb
+F:\Haunted_House\obj\Debug\netcoreapp3.1\Haunted_House.genruntimeconfig.cache

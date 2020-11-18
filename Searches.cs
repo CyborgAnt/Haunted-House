@@ -3,7 +3,6 @@ using System.Text;
 using static System.Console;
 using HouseStory;
 
-// Pseudocode for Room and Item Searches
 namespace Searches
 {
     public class LivingRoomSearch
@@ -25,7 +24,18 @@ namespace Searches
                 {
                     WriteLine("On the Mantle, you find a pamphlet: 'Reverse the Curse!'. There is a lot of occult information and drawings about various curses, their causes, and if they are reverseable.");
                     WriteLine("One passage particularly catches your attention, as most of it is highlighted:");
-                    WriteLine("'The Loup-Garou is a true Monster. It resembles a Werewolf but is mpre savage, more resilient, and partially demonic. The only way to break the Loup-Garou curse is an Exorcism, bathing in Holy Water or Holy Light, or execution via silver weapons.");
+                    string[] lines = System.IO.File.ReadAllLines(@"pamphlet.txt");
+
+                    System.Console.WriteLine("Contents of WriteLines2.txt = ");
+                    foreach (string line in lines)
+                    {
+                        Console.WriteLine("\t" + line);
+                    }
+
+                    // Keep the console window open in debug mode.
+                    Console.WriteLine("Press any key to exit.");
+                    System.Console.ReadKey();
+
                     WriteLine("You pocket the disturbing pamphlet - it might be of use, later.");
                     break;
                 }   
@@ -44,7 +54,8 @@ namespace Searches
                 }
                 case 5:
                 {
-
+                    WriteLine("You force the Damaged Door open enough to squeeze through, and up in a small hallway.");
+                    FirstFloor.smallerHall();    
                     break;
                 }
                 case 6:
@@ -58,12 +69,6 @@ namespace Searches
                     break;
             }
         }
-
-
-
-
-
-
     }
    
     public class masterBedroomSearch
@@ -81,20 +86,57 @@ namespace Searches
             if(wardrobeChoice != 1)
                 FirstFloor.hallContinue();
             else
-                FirstFloor.masterBedoom();    
+                FirstFloor.masterBedroom();    
 
+        }
+    }
+
+    public class EntertainmentRoom
+    {
+        public static void entRoomSearch(int choice)
+        {        
+            switch(choice)
+            {
+                case 1:
+                    // Chamber - FINAL BATTLE(S)
+                    break;
+                case 2:
+                    Console.WriteLine("There are bottles of various liquors behind the bar but nothing else of interest.");
+                    // link back to Ent. Room
+                    break;
+                case 3:
+                    // bathroom2
+                    WriteLine("This bathroom is surprisngly intact, compare to other parts of the house. You don't find anything of interest ");
+                    // link back to Ent. Room
+                    break;
+                case 4:
+                    WriteLine("You take a closer look at the safe. Under the numerical keypad, there is a hand-written strip of paper: you only get 3 chances. Number 4 won't end well.");
+                    WriteLine("Do you try to enter the code?");
+
+                    
+                    int safeOpen = Int32.Parse(ReadLine());
+                    
+
+                    safe();                    
+                    break;
+                case 5:
+                    Basement.stairs();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public static void safe()
+        {
+            
         }
 
 
-    }
 
-    public class BedroomSearch
-    {
-        /* ClosetOneSearch()
-            ClosetTwoSearch()
-            Bookcase() - 'puzzle'?
-            BedSearch()
-        */    
+
+
+
     }
     public class KitchenSearch
     {
