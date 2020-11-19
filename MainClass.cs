@@ -12,12 +12,13 @@ namespace HouseStory
     {
         public static void entryway()
         {
+            
             Console.WriteLine("You begin in a small entryway. There are a couple of small end tables in the entry, with pictures and and flowers on them.");
             Console.WriteLine("There is a closet in the left corner on the entry, with it's door open. Inside are a few coats, jackets, and pairs of dress shoes. Directly ahead of you is a long, narrow hallway.");
             Console.WriteLine("To your left is a door that's closed. To your right, there is a partially opened door that opens onto a large, dimly lit room, possibly a Living Room.");
 
             Console.WriteLine("What would you like to do? Enter a number: ");
-            WriteLine("1. Contine down the Hall, 2. Open the door to the left, 3. Go into the Living Room, 4. Check the Closet, Anything else to Quit");
+            WriteLine("1. Contine down the Hall\n2. Open the door to the left\n3. Go into the Living Room\n4. Check the Closet\nAnything else to Quit");
 
             var roomChoice = Int32.Parse(ReadLine());
 
@@ -47,10 +48,12 @@ namespace HouseStory
         {
             // code
             Console.WriteLine("You enter the hallway.\n");
-            Console.WriteLine("The hall passes by the Living Room. As you continue down the hall, there are a couple of doors on your left, probably closets or storage areas. A little further ahead, a smaller hallway branches off to the right. The main hallway ends at a T-section.");
+            Console.WriteLine("The hall passes by the Living Room but has no direct doorway. As you continue down the hall, there are a couple of doors on your left, probably closets or storage areas. A little further ahead, a smaller hallway branches off to the right. The main hallway ends at a T-section.");
+            WriteLine("Press 'Enter' to continue.");
+            Console.ReadLine();
 
             Console.WriteLine("What would you like to do?");
-            Console.WriteLine("1. Check the first closet, 2.Check the second closet, 3.Take the smaller hall branch, 4.Continue down the main hallway to the T-section.");
+            Console.WriteLine("1. Check the first closet\n2.Check the second closet\n3.Take the smaller hall branch\n4.Continue down the main hallway to the T-section.");
 
             var hallwayChoice = Int32.Parse(Console.ReadLine());
 
@@ -71,6 +74,9 @@ namespace HouseStory
                 case 4:
                     hallContinue();
                     break;
+                default:
+                    WriteLine("You have exited the program.");
+                    return;    
             }
         }
 
@@ -80,7 +86,7 @@ namespace HouseStory
             WriteLine("Press 'Enter' to continue.");
             Console.ReadLine();
             WriteLine("What do you want to do?");
-            WriteLine("1. Check the Left branch bedroom, 2. Check the right branch bedroom, 3. Go back to the Entry");
+            WriteLine("1. Check the Left branch bedroom\n2. Check the right branch bedroom\n3. Go back to the Entry\nAnything Else: Quit program");
             int hallBranchChoice = Int32.Parse(ReadLine());
 
             Console.Clear();
@@ -96,7 +102,8 @@ namespace HouseStory
                     entryway();
                     break;
                 default:
-                    break;
+                    WriteLine("You have exited the program.");
+                    return;
             }
 
         }
@@ -108,7 +115,7 @@ namespace HouseStory
             Console.WriteLine("There is a large wooden table in the center of the room. Most of the wooden chairs around the table were overturned. There are some china cabinets in 2 of the corners of the room. Other than a large, draped window, there is nothing else of note visible in the Dining Room. There is also an open archway that opens onto the Kitchen.");
 
             Console.WriteLine("What do you do next?\n");
-            Console.WriteLine("1. Go to the kitchen, 2.Return to the Hallway.");
+            Console.WriteLine("1. Go to the kitchen\n2.Return to the Hallway\nAnything Else: Quit program");
 
             var diningRoomChoice = Int32.Parse(ReadLine());
             Console.Clear();
@@ -121,7 +128,8 @@ namespace HouseStory
                     hall();
                     break;
                 default:
-                    return;         // change?
+                    WriteLine("You have exited the program.");
+                    return;
             }    
 
         }
@@ -134,7 +142,7 @@ namespace HouseStory
             WriteLine("There is a door on the opposite side of the room from you; the door is damaged, as if someone - or something - kicked it open.");
 
             Console.WriteLine("\nWhat would you like to do?");
-            Console.WriteLine("1. Search the Living Room, 2. Check the Mantle, 3. Check the Couch, 4. Check the Loveseat, 5. Head to the Damaged Door, 6. Head back to the Hall.\n");
+            Console.WriteLine("1. Search the Living Room\n2. Check the Mantle\n3. Check the Couch\n4. Check the Loveseat\n5. Head to the Damaged Door\n6. Head back to the Hall\nAnything Else: Quit program");
 
             var livingRoomChoice = Int32.Parse(ReadLine());
 
@@ -192,8 +200,8 @@ namespace HouseStory
                     break;
                 }
                 default:
-                    // code
-                    break;
+                    WriteLine("You have exited the program.");
+                    return;
             }
         }
 
@@ -203,7 +211,7 @@ namespace HouseStory
             WriteLine("It's a wider but shorter path, compared to the main hallway. Some simple artwork dot both sides of the hall. On the left side of the hall, there is a broken door that looks in on the kitchen. On the right side, there is another broken door, this one leading into the Living Room. Ahead of you, the hall ends at a door that leads to the outside.");
             WriteLine("What do you do?");
 
-            WriteLine("1. Go into the Kitchen, 2. Go into the Living Room, 3. Go outside, via the Door, 4. Go back to the Main Hall.");
+            WriteLine("1. Go into the Kitchen\n2. Go into the Living Room\n3. Go outside, via the Door\n4. Go back to the Main Hall\nAnything Else: Quit program");
             int smallHallChoice = Int32.Parse(ReadLine());
 
             Console.Clear();
@@ -225,7 +233,8 @@ namespace HouseStory
                     hall();
                     break; 
                 default:
-                    break;
+                    WriteLine("You have exited the program.");
+                    return;
             }
 
         }
@@ -238,7 +247,7 @@ namespace HouseStory
             var bedroom1Search = 0;
 
             Console.WriteLine("What would you like to do?");
-            Console.WriteLine("1. Investigate the Left Closet, 2.Investigate the Right Closet, 3.Investigate the Dresser, 4.Leave the Bedroom.");
+            Console.WriteLine("1. Investigate the Left Closet\n2.Investigate the Right Closet\n3.Investigate the Dresser\n4.Leave the Bedroom.");
 
             bedroom1Search = Int32.Parse(ReadLine());
 
@@ -267,8 +276,8 @@ namespace HouseStory
                     // double-check Map
                     break;         
                 default:
-                    bedroom();
-                    break;
+                    WriteLine("You have exited the program.");
+                    return;
             }
         }
 
@@ -281,7 +290,7 @@ namespace HouseStory
 
             WriteLine("What do you do next?");
 
-            WriteLine("1. Check the Closet, 2. Check the Wardrobe, 3. Check the Bed, 4. Leave the Master Bedroom.");
+            WriteLine("1. Check the Closet\n2. Check the Wardrobe\n3. Check the Bed\n4. Leave the Master Bedroom\nAnything Else: Quit program");
             int masterBedroomChoice = Int32.Parse(ReadLine());
 
             Console.Clear();
@@ -299,7 +308,7 @@ namespace HouseStory
                     WriteLine("\nIt appears to be a man, at least 6 and half feet tall, with long, salt-and-pepper hair. His lower body seems fine - wearing gray slacks - but his upper body is a mess. Deep slashes cover his chest and mid-section. There is a deep gash between his left shoulder and neck - possibly a bite mark?. His face is frozen in a mix of fright and... recognition?");
                     WriteLine("This is a very disturbing site! Do you stay in the Master Bedroom?");
 
-                    WriteLine("1. Yes, 2. No");
+                    WriteLine("1. Yes\n2. No");
                     int wardrobeChoice = Int32.Parse(ReadLine());
 
                     if(wardrobeChoice != 1)
@@ -313,7 +322,8 @@ namespace HouseStory
                     masterBedroom();
                     break;        
                 default:
-                    break;
+                    WriteLine("You have exited the program.");
+                    return;
             }
 
         }
@@ -329,7 +339,7 @@ namespace HouseStory
             Console.WriteLine("You have a lot of choices - what do you do?");
 
             //loop back to this menu
-            Console.WriteLine("1. Investigate the Oven, 2.Investigate the Green glow, 3.Investigate the Yellow glow, 4.Check the room with the Stairs, 5.Check the Island Counter, 6. Leave the kitcken.");
+            Console.WriteLine("1. Investigate the Oven\n2.Investigate the Green glow\n3.Investigate the Yellow glow\n4.Check the room with the Stairs\n5.Check the Island Counter\n6. Leave the kitcken\nAnything Else: Quit program");
             //switch and cases: herring/descr., gd, bd, avg, flavor
             kitchenChoice = Int32.Parse(ReadLine());
 
