@@ -31,10 +31,10 @@ namespace HouseStory
                     dining();
                     break;
                 case 3:
-                    LivingRoom();
+                    livingRoom();
                     break;
                 case 4:
-                    WriteLine("You see some old clothes and shoes, but nothing else of interest.");
+                    WriteLine("You see some old clothes and shoes, but nothing else of interest. You return to the Entry.");
                     entryway();
                     break;
                 default:
@@ -46,7 +46,7 @@ namespace HouseStory
         public static void hall()
         {
             // code
-            Console.WriteLine("You start down the hallway.\n");
+            Console.WriteLine("You enter the hallway.\n");
             Console.WriteLine("The hall passes by the Living Room. As you continue down the hall, there are a couple of doors on your left, probably closets or storage areas. A little further ahead, a smaller hallway branches off to the right. The main hallway ends at a T-section.");
 
             Console.WriteLine("What would you like to do?");
@@ -100,17 +100,17 @@ namespace HouseStory
         static void dining()
         {
             // code
-            Console.WriteLine("You enter the Dining Room.");
-            Console.WriteLine("There is a large wooden table in the center of the room. Most of the wooden chairs around the table were overturned. There are some china cabinets in 2 of the corners of the room. Other than a large, draped window, there is nothing else of note visible in the Dining Room.");
+            Console.WriteLine("You open the door and enter the Dining Room.");
+            Console.WriteLine("There is a large wooden table in the center of the room. Most of the wooden chairs around the table were overturned. There are some china cabinets in 2 of the corners of the room. Other than a large, draped window, there is nothing else of note visible in the Dining Room. There is also an open archway that opens onto the Kitchen.");
 
             Console.WriteLine("What do you do next?\n");
-            Console.WriteLine("1. Go to the Bedroom, 2.Return to the Hallway.");
+            Console.WriteLine("1. Go to the kitchen, 2.Return to the Hallway.");
 
             var diningRoomChoice = Int32.Parse(ReadLine());
             switch (diningRoomChoice)
             {
                 case 1:
-                    bedroom();      // need code
+                    kitchen();
                     break;
                 case 2:
                     hall();
@@ -121,9 +121,8 @@ namespace HouseStory
 
         }
                 
-        static void LivingRoom()
+        static void livingRoom()
         {
-            // code
             WriteLine("You enter the Living Room. If would be a really nice living room, if it didn't look like it had been recently ramsacked.\n");
             WriteLine("A large couch, that once looked like it was up against the left wall, has been pulled out to the center of the room. A loveseat is laying on it's side, next to the couch. \nThere is a mantle piece against the right wall. In front of the Mantle are the remains of what appears to be a coffee table - it looks like it was thrown against the mantle.");
             WriteLine("There is a door on the opposite side of the room from you; the door is damaged, as if someone - or something - kicked it open.");
@@ -131,30 +130,62 @@ namespace HouseStory
             Console.WriteLine("What would you like to do?");
             Console.WriteLine("1. Search the Living Room, 2. Check the Mantle, 3. Check the Couch, 4. Check the Loveseat, 5. Head to the Damaged Door, 6. Head back to the Hall.\n");
 
-            var livingRoomChoice = Int32.Parse(Console.ReadLine());
+            var livingRoomChoice = Int32.Parse(ReadLine());
 
-            switch (livingRoomChoice)
+            switch(livingRoomChoice)
             {
                 case 1:
-                    // search the living room
+                {    
+                    WriteLine("You do a search of the Living Room but find nothing of interest.");
                     break;
+                }
                 case 2:
-                    // Mantle Search
+                {
+                    WriteLine("On the Mantle, you find a pamphlet: 'Reverse the Curse!'. There is a lot of occult information and drawings about various curses, their causes, and if they are reverseable.");
+                    WriteLine("One passage particularly catches your attention, as most of it is highlighted:");
+                    string[] lines = System.IO.File.ReadAllLines(@"pamphlet.txt");
+
+                    System.Console.WriteLine("Contents of WriteLines2.txt = ");
+                    foreach (string line in lines)
+                    {
+                        Console.WriteLine("\t" + line);
+                    }
+
+                    // Keep the console window open in debug mode.
+                    Console.WriteLine("Press any key to exit.");
+                    System.Console.ReadKey();
+
+                    WriteLine("You pocket the disturbing pamphlet - it might be of use, later.");
                     break;
+                }   
                 case 3:
-                    // Couch Search
+                {
+                    WriteLine("You search the Couch. There's nothing on the Couch but you see a silver-grey glint in between two of the cushions. Removing the cushions, you find a LOCKET. Opening it, you see a photograph of a tall man and an equally tall woman. On the back of the Locket is an inscription: 'May you always be protected by love and family.'");
+                    WriteLine("You also notice that the Locket felt... warm... when you opened it. As you close the Locket, it goes back to a normal temperature. You slip the Locket around your neck and leave the Living Room.");
+                    bool protection = true;
+                    FirstFloor.hall();
                     break;
+                } 
                 case 4:
-                    // Loveseat Search
+                {
+                    WriteLine("You search the Loveseat. You find nothing under the cushions or in the back of the seat.");
                     break;
+                }
                 case 5:
-                    smallerHall(); // not typed yet
-                    break;    
-                case 6:
-                    hall();
+                {
+                    WriteLine("You force the Damaged Door open enough to squeeze through, and up in a small hallway.");
+                    FirstFloor.smallerHall();    
                     break;
+                }
+                case 6:
+                {
+                    WriteLine("You decide to head back to the Hallway.");
+                    FirstFloor.hall();
+                    break;
+                }
                 default:
-                    break; // change?
+                    // code
+                    break;
             }
         }
 
@@ -173,11 +204,13 @@ namespace HouseStory
                     kitchen();
                     break;
                 case 2:
-                    LivingRoom();
+                    livingRoom();
                     break;
                 case 3:
-                   //check for locket
-                   break;
+                    WriteLine("You open the door and look outside. The full moon is bright, the night is cool and still, pretty peaceful. Nevertheless, you go back inside, shut the outdoor, and go back to the main Hall.");
+                    hall();
+                    break;
+
                 case 4:
                     WriteLine("You decide to skip the doors in this hall and return to the Main Hall.");
                     hall();
@@ -270,10 +303,10 @@ namespace HouseStory
             WriteLine("Disturbingly, there is also a large, red stain on the floor, in front of the room with the stairs. You are fairly certain that it is blood.");
             Console.WriteLine("You have a lot of choices - what do you do?");
 
-            kitchenChoice = Int32.Parse(Console.ReadLine());
             //loop back to this menu
             Console.WriteLine("1. Investigate the Oven, 2.Investigate the Green glow, 3.Investigate the Yellow glow, 4.Check the room with the Stairs, 5.Check the Island Counter, 6. Leave the kitcken.");
             //switch and cases: herring/descr., gd, bd, avg, flavor
+            kitchenChoice = Int32.Parse(ReadLine());
 
             Searches.KitchenSearch.kitchenSearch(kitchenChoice);
         }

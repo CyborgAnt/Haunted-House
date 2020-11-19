@@ -13,61 +13,7 @@ namespace Searches
             WriteLine("1. Search the Living Room, 2. Check the Mantle, 3. Check the Couch, 4. Check the Loveseat, 5. Head to the Damaged Door, 6. Head back to the Hall.");
 
             var livingRoomChoice = Int32.Parse(Console.ReadLine());
-            switch(livingRoomChoice)
-            {
-                case 1:
-                {    
-                    WriteLine("You do a search of the Living Room but find nothing of interest.");
-                    break;
-                }
-                case 2:
-                {
-                    WriteLine("On the Mantle, you find a pamphlet: 'Reverse the Curse!'. There is a lot of occult information and drawings about various curses, their causes, and if they are reverseable.");
-                    WriteLine("One passage particularly catches your attention, as most of it is highlighted:");
-                    string[] lines = System.IO.File.ReadAllLines(@"pamphlet.txt");
-
-                    System.Console.WriteLine("Contents of WriteLines2.txt = ");
-                    foreach (string line in lines)
-                    {
-                        Console.WriteLine("\t" + line);
-                    }
-
-                    // Keep the console window open in debug mode.
-                    Console.WriteLine("Press any key to exit.");
-                    System.Console.ReadKey();
-
-                    WriteLine("You pocket the disturbing pamphlet - it might be of use, later.");
-                    break;
-                }   
-                case 3:
-                {
-                    WriteLine("You search the Couch. There's nothing on the Couch but you see a silver-grey glint in between two of the cushions. Removing the cushions, you find a LOCKET. Opening it, you see a photograph of a tall man and an equally tall woman. On the back of the Locket is an inscription: 'May you always be protected by love and family.'");
-                    WriteLine("You also notice that the Locket felt... warm... when you opened it. As you close the Locket, it goes back to a normal temperature. You slip the Locket around your neck and leave the Living Room.");
-                    bool protection = true;
-                    FirstFloor.hall();
-                    break;
-                } 
-                case 4:
-                {
-                    WriteLine("You search the Loveseat. You find nothing under the cushions or in the back of the seat.");
-                    break;
-                }
-                case 5:
-                {
-                    WriteLine("You force the Damaged Door open enough to squeeze through, and up in a small hallway.");
-                    FirstFloor.smallerHall();    
-                    break;
-                }
-                case 6:
-                {
-                    WriteLine("You decide to head back to the Hallway.");
-                    FirstFloor.hall();
-                    break;
-                }
-                default:
-                    // code
-                    break;
-            }
+            
         }
     }
    
@@ -146,19 +92,35 @@ namespace Searches
             {
                 case 1:
                     //oven
-                    //red herring?
+                    WriteLine("You go to the oven. it's a standard gas stovetop-gas oven. You open the oven door and see... writing? ");
+                    WriteLine("In a red marker or paint, on the back wall, is a message:");
+                    WriteLine("She is cursed!");
+                    WriteLine("You don't know who 'she' is. You shut the oven door.");
+                    FirstFloor.kitchen();
                     break;
                 case 2:
-                    //green glow - BAD
+                    WriteLine("You walk up to the spot on the wall where the green glow is coming from. There's no heat or cold in the area, just the glow. You push on the wall but nothing happens.");
+                    WriteLine("You then notice a discolored spot on wall, a few feet to the left. You press on it, and a section of the wall swings open, revealing the green glow....");
+                    WriteLine("Multiple arms shoot from the glow! They grab onto your arms, you hair, anywhere that they can find a grip! You are yanked into the green light... and land in the front yard of another house. As you sit up, the front door of this house opens up and 3 figures - 2 women and a man - rush out to meet you.");
+                    WriteLine("'Thank goodness we snagged you in time!', one of the women exclaim. 'You are not prepared to take on what's in that house - come with us!', the man states. You follow them into the house, where you fate is put on hold until Part II....");
                     break;
                 case 3:
-                    //yellow glow - GOOD, Safe code '7521'
+                    //yellow glow - GOOD
+                    WriteLine("You walk up to the spot on the wall where the yellow glow is coming from. You don't see any kind of opening but you do see a small, slightly discolored spot on the wall, a few feet away. You push it and a stone slab slides down into an until-then unseen groove. Inside the opening is what appears to be a small altar or shrine. There are dozens of small, lit candles - the source of the yellow light. There is a medium-sized silver cross on top of a two-tiered table. There are smaller crosses on either end of the lower tier, set into bases. On the top tier is... a box of bullets?");
+                    WriteLine("You open the box and see 12 long, silver bullets. This is not a coincidence, you think to your self. You also realize that silver bullets need some kind of Gun to go with them... and possibly some target to use them on.");
+                    WriteLine("You take the box of bullets and leave the shrine, heading back into the kitchen.");
+                    FirstFloor.kitchen();
                     break;
                 case 4:
-                    //method to Second Floor; new File and Classes
+                    Basement.stairs();
                     break;
                 case 5:
-                    //counter; flavor text
+                    WriteLine("You find some odds and ends: a couple of take-out menus, a few receipts, a newspaper. You don't see anything else of importance.");
+                    FirstFloor.kitchen();
+                    break;
+                case 6:
+                    WriteLine("You leave the Kitchen and head back into the main Hall.");
+                    FirstFloor.hall();
                     break;
                 default:
                     break;
