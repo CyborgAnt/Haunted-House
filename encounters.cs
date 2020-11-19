@@ -41,7 +41,7 @@ public class Haunts
     }
     public void handSurvived()
     {
-        Console.WriteLine("The hand reaches for you... but you manage to dodge to one side. It passes through the wall of the hallway, and disappears. You hear a short but low chuckle from... somewhere. You decide what to do next: ");
+        Console.WriteLine("The hand reaches for you... but you manage to dodge to one side. It passes through the wall of the hallway, and disappears. You hear a short but low chuckle from... somewhere. You decide to continue with the hall... ");
         FirstFloor.hall();
         // test this decision
     }

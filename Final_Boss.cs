@@ -1,3 +1,3 @@
-// Fight with Loup-Garou
-// set up HP, weapons, and choices
-// need locket AND gun; can survive with gun only
+using System;
+using System.Text;
+using static System.Console;

@@ -16,27 +16,7 @@ namespace Searches
             
         }
     }
-   
-    public class masterBedroomSearch
-    {
-        public static void wardrobeSearch()
-        {
-            WriteLine("As you move towards the Wardrobe, that odor gets stronger. You grab the handles, open the door...");
-            WriteLine("... and a body tumbles out!!");
-            WriteLine("\nIt appears to be a man, at least 6 and half feet tall, with long, salt-and-pepper hair. His lower body seems fine - wearing gray slacks - but his upper body is a mess. Deep slashes cover his chest and mid-section. There is a deep gash between his left shoulder and neck - possibly a bite mark?. His face is frozen in a mix of fright and... recognition?");
-            WriteLine("This is a very disturbing site! Do you stay in the Master Bedroom?");
-
-            WriteLine("1. Yes, 2. No");
-            int wardrobeChoice = Int32.Parse(ReadLine());
-
-            if(wardrobeChoice != 1)
-                FirstFloor.hallContinue();
-            else
-                FirstFloor.masterBedroom();    
-
-        }
-    }
-
+    
     public class EntertainmentRoom
     {
         public static void entRoomSearch(int choice)

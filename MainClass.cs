@@ -12,7 +12,8 @@ namespace HouseStory
     {
         public static void entryway()
         {
-            Console.WriteLine("You start in a small entryway. There are a couple of small end tables in the entry, with pictures and and flowers on them.");
+            Console.Clear();        //will use this method to keep the console clutter to a minimum
+            Console.WriteLine("You begin in a small entryway. There are a couple of small end tables in the entry, with pictures and and flowers on them.");
             Console.WriteLine("There is a closet in the left corner on the entry, with it's door open. Inside are a few coats, jackets, and pairs of dress shoes. Directly ahead of you is a long, narrow hallway.");
             Console.WriteLine("To your left is a door that's closed. To your right, there is a partially opened door that opens onto a large, dimly lit room, possibly a Living Room.");
 
@@ -21,7 +22,7 @@ namespace HouseStory
 
             var roomChoice = Int32.Parse(ReadLine());
 
-            // need to test the 'switch' and methods with it
+            Console.Clear();
             switch (roomChoice)
             {
                 case 1:
@@ -54,10 +55,12 @@ namespace HouseStory
 
             var hallwayChoice = Int32.Parse(Console.ReadLine());
 
+            Console.Clear();
             switch (hallwayChoice)
             {
                 case 1:
                     WriteLine("You check the first closet. There are some magazines, some hats, and other odds and ends on the top shelf. There are some cleaning supplies and a broom on the floor. A few boxes on the floor reveal files, papers, and magazines. Nothing else of interest is found.");
+                    hall();
                     break;
                 case 2:
                     var closet = new Haunts();                    
@@ -80,6 +83,7 @@ namespace HouseStory
             WriteLine("1. Check the Left branch bedroom, 2. Check the right branch bedroom, 3. Go back to the Entry");
             int hallBranchChoice = Int32.Parse(ReadLine());
 
+            Console.Clear();
             switch (hallBranchChoice)
             {
                 case 1:
@@ -107,6 +111,7 @@ namespace HouseStory
             Console.WriteLine("1. Go to the kitchen, 2.Return to the Hallway.");
 
             var diningRoomChoice = Int32.Parse(ReadLine());
+            Console.Clear();
             switch (diningRoomChoice)
             {
                 case 1:
@@ -124,14 +129,15 @@ namespace HouseStory
         static void livingRoom()
         {
             WriteLine("You enter the Living Room. If would be a really nice living room, if it didn't look like it had been recently ramsacked.\n");
-            WriteLine("A large couch, that once looked like it was up against the left wall, has been pulled out to the center of the room. A loveseat is laying on it's side, next to the couch. \nThere is a mantle piece against the right wall. In front of the Mantle are the remains of what appears to be a coffee table - it looks like it was thrown against the mantle.");
+            WriteLine("A large couch, that once looked like it was up against the left wall, has been pulled out to the center of the room. A loveseat is laying on its side, next to the couch. \nThere is a mantle piece against the right wall. In front of the Mantle are the remains of what appears to be a coffee table - it looks like it was thrown against the mantle.");
             WriteLine("There is a door on the opposite side of the room from you; the door is damaged, as if someone - or something - kicked it open.");
 
-            Console.WriteLine("What would you like to do?");
+            Console.WriteLine("\nWhat would you like to do?");
             Console.WriteLine("1. Search the Living Room, 2. Check the Mantle, 3. Check the Couch, 4. Check the Loveseat, 5. Head to the Damaged Door, 6. Head back to the Hall.\n");
 
             var livingRoomChoice = Int32.Parse(ReadLine());
 
+            Console.Clear();
             switch(livingRoomChoice)
             {
                 case 1:
@@ -155,14 +161,15 @@ namespace HouseStory
                     Console.WriteLine("Press any key to exit.");
                     System.Console.ReadKey();
 
-                    WriteLine("You pocket the disturbing pamphlet - it might be of use, later.");
+                    WriteLine("You pocket the disturbing pamphlet - it might be of use, later. You continue in the Living Room.");
+                    livingRoom();
                     break;
                 }   
                 case 3:
                 {
-                    WriteLine("You search the Couch. There's nothing on the Couch but you see a silver-grey glint in between two of the cushions. Removing the cushions, you find a LOCKET. Opening it, you see a photograph of a tall man and an equally tall woman. On the back of the Locket is an inscription: 'May you always be protected by love and family.'");
+                    WriteLine("You search the Couch. There's nothing on the Couch but you see a silver-grey glint in between two of the cushions. Removing the cushions, you find a LOCKET. \nOpening it, you see a photograph of a tall man and an equally tall woman. \nOn the back of the Locket is an inscription: 'May you always be protected by love and family.'");
                     WriteLine("You also notice that the Locket felt... warm... when you opened it. As you close the Locket, it goes back to a normal temperature. You slip the Locket around your neck and leave the Living Room.");
-                    bool protection = true;
+                    bool protection = true;     // use in Final Battle
                     FirstFloor.hall();
                     break;
                 } 
@@ -198,6 +205,7 @@ namespace HouseStory
             WriteLine("1. Go into the Kitchen, 2. Go into the Living Room, 3. Go outside, via the Door, 4. Go back to the Main Hall.");
             int smallHallChoice = Int32.Parse(ReadLine());
 
+            Console.Clear();
             switch (smallHallChoice)
             {
                 case 1:
@@ -223,7 +231,7 @@ namespace HouseStory
 
         static void bedroom()
         {
-            Console.WriteLine("You enter the Bedroom.");
+            Console.WriteLine("You enter a Bedroom.");
             Console.WriteLine("It's a large, nice bedroom, not suffering from the ramsacked appearance of most of the rest of the house. There is a Queen-sized bed, along with a couple of night stands and a dresser. On top of one stand is a small lamp and an alarm clock. There's not much of interest on the other stand. A large mirror is on top of the dresser.\n");
             Console.WriteLine("There are a couple of closets in the bedroom, one to the left of the door, one on the opposite right corner; both closet doors are closed.");
             var bedroom1Search = 0;
@@ -233,15 +241,18 @@ namespace HouseStory
 
             bedroom1Search = Int32.Parse(ReadLine());
 
+            Console.Clear();
             switch (bedroom1Search)
             {
                 case 1:
                     // nothing
                     WriteLine("You find nothing of interest in the closet.");
+                    bedroom();
                     break;
                 case 2:
                     // nothing
-                    WriteLine("You find nothing of interest in the closet.");
+                    WriteLine("There are some coats, jackets, and an assortment of miscellaneous clothes. You find nothing else of interest in this closet.");
+                    bedroom();
                     break;
                 case 3:
                     // not sure
@@ -263,16 +274,16 @@ namespace HouseStory
         public static void masterBedroom()
         {
             WriteLine("You enter a bedroom that might be as large as some apartments - the Master Bedroom.");
-            WriteLine("There is a King-sized bed in the center of the room, with dark blue sheets, a blue and black comforter, and many pillows. Looking from the doorway, there is a large window on the right wall and a floor-to-near ceiling window on the wall opposite from you.");
-            WriteLine("There is a large, walk-in closet in the far left corner of the room. There is a large fan-and-light-fixture on the ceiling, above the bed, and a floor lamp next to the door.");
-            WriteLine("Next to the window on the right wall, there is a large wardrobe, about 7 feet tall. The doors of the wardrobe are closed but there are scratch marks on them.");
-            WriteLine("There are also some odds and ends around the room: some clothes on the floor, a small table next to the wardrobe, and some books on the bed. As you walk around the room, you do notice a faint but foul odor. You cannot tell where the odor is coming from, though.");
+            WriteLine("There is a King-sized bed in the center of the room, with dark blue sheets, a blue and black comforter, and many pillows. \nLooking from the doorway, there is a large window on the right wall and a floor-to-near ceiling window on the wall opposite from you.");
+            WriteLine("There is a large, walk-in closet in the far left corner of the room. \nThere is a large fan-and-light-fixture on the ceiling, above the bed, and a floor lamp next to the door. \nNext to the window on the right wall, there is a large wardrobe, about 7 feet tall. The doors of the wardrobe are closed but there are scratch marks on the front of them.");
+            WriteLine("There are also some odds and ends around the room: some clothes on the floor, a small table next to the wardrobe, and some books on the bed. \nAs you walk around the room, you do notice a faint but foul odor. You cannot tell where the odor is coming from, though.");
 
             WriteLine("What do you do next?");
 
-            WriteLine("1. Check the Closet, 2. Check the Wardrobe, 3. Check the Bed, 4. leave the Master Bedroom.");
+            WriteLine("1. Check the Closet, 2. Check the Wardrobe, 3. Check the Bed, 4. Leave the Master Bedroom.");
             int masterBedroomChoice = Int32.Parse(ReadLine());
 
+            Console.Clear();
             switch (masterBedroomChoice)
             {
                 case 1:
@@ -282,10 +293,23 @@ namespace HouseStory
                     break;
                 case 2:
                     // Wardrobe - BODY
-                    
+                    WriteLine("As you move towards the Wardrobe, that odor gets stronger. You grab the handles, open the door...");
+                    WriteLine("... and a body tumbles out!!");
+                    WriteLine("\nIt appears to be a man, at least 6 and half feet tall, with long, salt-and-pepper hair. His lower body seems fine - wearing gray slacks - but his upper body is a mess. Deep slashes cover his chest and mid-section. There is a deep gash between his left shoulder and neck - possibly a bite mark?. His face is frozen in a mix of fright and... recognition?");
+                    WriteLine("This is a very disturbing site! Do you stay in the Master Bedroom?");
+
+                    WriteLine("1. Yes, 2. No");
+                    int wardrobeChoice = Int32.Parse(ReadLine());
+
+                    if(wardrobeChoice != 1)
+                        FirstFloor.hallContinue();
+                    else
+                        FirstFloor.masterBedroom();    
                     break;
                 case 3:
                     // bed - BULLETS under bed
+                    WriteLine("There is nothing remarkable about the bed. \nHowever, as you take a glance UNDER the bed, you find a small box. Pulling out the box, you find SILVER BULLETS. You dump the bullets into your pants pockets; you might need these later.");
+                    masterBedroom();
                     break;        
                 default:
                     break;
@@ -308,6 +332,7 @@ namespace HouseStory
             //switch and cases: herring/descr., gd, bd, avg, flavor
             kitchenChoice = Int32.Parse(ReadLine());
 
+            Console.Clear();
             Searches.KitchenSearch.kitchenSearch(kitchenChoice);
         }
     }
