@@ -14,7 +14,7 @@ public class Haunts
         Console.WriteLine("As you open the closet door, you see a ghostly hand reach for you!");
         Console.WriteLine("Pick a number between 1 and 20, to see if you dodge the hand...: ");
         playerRoll = Int32.Parse(Console.ReadLine());
-        closetRoll = rand.Next(1, 21);       // SHOULD generate a random integer between 1 and 20
+        closetRoll = 5 + rand.Next(1, 21);       // SHOULD generate a random integer between 1 and 20
 
         if(playerRoll > closetRoll)
         {
@@ -37,7 +37,6 @@ public class Haunts
         Console.WriteLine("The hand reaches for your chest... and passes through it. There were no physical effects but you are pretty shaken up. You hear, in the distance, a low, ominous chuckle. You continue on.");
         var hallReturn = new FirstFloor();
         FirstFloor.hall();
-        // need a Break?
     }
     public void handSurvived()
     {

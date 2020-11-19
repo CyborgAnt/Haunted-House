@@ -12,7 +12,6 @@ namespace HouseStory
     {
         public static void entryway()
         {
-            Console.Clear();        //will use this method to keep the console clutter to a minimum
             Console.WriteLine("You begin in a small entryway. There are a couple of small end tables in the entry, with pictures and and flowers on them.");
             Console.WriteLine("There is a closet in the left corner on the entry, with it's door open. Inside are a few coats, jackets, and pairs of dress shoes. Directly ahead of you is a long, narrow hallway.");
             Console.WriteLine("To your left is a door that's closed. To your right, there is a partially opened door that opens onto a large, dimly lit room, possibly a Living Room.");
@@ -22,7 +21,7 @@ namespace HouseStory
 
             var roomChoice = Int32.Parse(ReadLine());
 
-            Console.Clear();
+            Console.Clear();        //will use this method to keep the console clutter to a minimum
             switch (roomChoice)
             {
                 case 1:
@@ -35,7 +34,7 @@ namespace HouseStory
                     livingRoom();
                     break;
                 case 4:
-                    WriteLine("You see some old clothes and shoes, but nothing else of interest. You return to the Entry.");
+                    WriteLine("You see some old clothes and shoes, but nothing else of interest. You return to the Entry.\n");
                     entryway();
                     break;
                 default:
@@ -78,7 +77,8 @@ namespace HouseStory
         public static void hallContinue()
         {
             WriteLine("At the end of the hall, you come upon another hall, running perpendicular to the Main Hall. On the left branch, there is a door on the right side; on the right branch, there is a door on the left side. These are likely bedrooms.");
-
+            WriteLine("Press 'Enter' to continue.");
+            Console.ReadLine();
             WriteLine("What do you want to do?");
             WriteLine("1. Check the Left branch bedroom, 2. Check the right branch bedroom, 3. Go back to the Entry");
             int hallBranchChoice = Int32.Parse(ReadLine());
@@ -128,6 +128,7 @@ namespace HouseStory
                 
         static void livingRoom()
         {
+            Console.Clear();
             WriteLine("You enter the Living Room. If would be a really nice living room, if it didn't look like it had been recently ramsacked.\n");
             WriteLine("A large couch, that once looked like it was up against the left wall, has been pulled out to the center of the room. A loveseat is laying on its side, next to the couch. \nThere is a mantle piece against the right wall. In front of the Mantle are the remains of what appears to be a coffee table - it looks like it was thrown against the mantle.");
             WriteLine("There is a door on the opposite side of the room from you; the door is damaged, as if someone - or something - kicked it open.");

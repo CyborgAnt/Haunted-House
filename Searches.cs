@@ -36,15 +36,15 @@ namespace Searches
                     // link back to Ent. Room
                     break;
                 case 4:
-                    WriteLine("You take a closer look at the safe. Under the numerical keypad, there is a hand-written strip of paper: you only get 3 chances. Number 4 won't end well.");
+                {   
+                    WriteLine("You take a closer look at the safe. Under the numerical keypad, there is a hand-written strip of paper: 'You only get 3 chances'.");
                     WriteLine("Do you try to enter the code?");
-
-                    
+                    WriteLine("1. Yes, 2. No");
                     int safeOpen = Int32.Parse(ReadLine());
                     
-
-                    safe();                    
+                    safe(safeOpen);                    
                     break;
+                }    
                 case 5:
                     Basement.stairs();
                     break;
@@ -53,9 +53,58 @@ namespace Searches
             }
         }
 
-        public static void safe()
+        public static void safe(int open)
         {
-            
+            if(open == 1)
+            {
+                WriteLine("You decide to try and open the safe.");
+
+                // variables
+                int attemptsLeft = 3;       // number of attempts to open the safe
+                int safeCode = 7520;
+                int enteredCode = 0;    // initialized
+
+                while(attemptsLeft > 0)
+                {
+                    WriteLine("Enter the 4-digit code: ");
+                    enteredCode = Int32.Parse(ReadLine());
+                    if(enteredCode != safeCode)
+                    {
+    
+                        WriteLine("Incorrect!");
+                        attemptsLeft -= 1;
+                        WriteLine("{0} attempts left.", attemptsLeft);
+                        if(attemptsLeft == 0)
+                        {
+                            WriteLine("You have tried to open the safe 3 times and failed. As you start to turn around to leave, you feel several sharp, piercing points go into your back and side. On the opposite side of the room, 4 small openings are now evident on the wall. You almost immediately feel dizzy and heavy-limbed. You've been drugged or poisoned!");
+                            WriteLine("You collapse to the ground, consciousness slipping away. You are still alive but you will be out of commission for quite awhile, as the sleeping poison works its way through your system. You hope that 'she' doesn't find you before you wake up....");
+
+                            // 'end program' code
+                        }
+                    }
+                    if(enteredCode == safeCode)
+                    {
+                        WriteLine("Correct!");
+
+                        WriteLine("\nThe internal lock of the safe clicks open. You open the door and see 3 items: a folded piece of paper, a newspaper clip, and a large, sliver-plated GUN.");
+                        WriteLine("The newspaper clip describes a murder that happened near this house: 5 people were brutally murdered, about 4 weeks ago. 2 bodies were hard to identify, due to the amount of damage inflicted.");
+                        WriteLine("The folded piece of paper contains a hand-written message, in a tight, small, cursive hand: She killed them! She is cursed! If you find this, leave this house before it is too late!");
+                        WriteLine("You take the clip but leave the note. You also take the GUN. Whoever 'she' is, it sounds like you might need the gun if you find her.");
+                        WriteLine("You return your attention to the Entertainment Room. Press 'Enter' to continue.");
+                        Console.ReadLine();
+
+                        Basement.entertainmentRoom();
+                    }
+                }
+            }
+            if(open == 2)
+            {
+                WriteLine("You decide to not press your luck and ignore the keypad on the safe.\n");
+                WriteLine("Press 'Enter' to continue.");
+                Console.ReadLine();
+                Console.Clear();
+                Basement.entertainmentRoom();
+            }
         }
 
 
