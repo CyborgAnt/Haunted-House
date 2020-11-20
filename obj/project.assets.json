@@ -8,24 +8,26 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "/Users/newmac/.nuget/packages/": {}
+    "C:\\Users\\ZuriB\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/newmac/Desktop/Haunted-House/Haunted_House.csproj",
+      "projectUniqueName": "F:\\Haunted_House\\Haunted_House.csproj",
       "projectName": "Haunted_House",
-      "projectPath": "/Users/newmac/Desktop/Haunted-House/Haunted_House.csproj",
-      "packagesPath": "/Users/newmac/.nuget/packages/",
-      "outputPath": "/Users/newmac/Desktop/Haunted-House/obj/",
+      "projectPath": "F:\\Haunted_House\\Haunted_House.csproj",
+      "packagesPath": "C:\\Users\\ZuriB\\.nuget\\packages\\",
+      "outputPath": "F:\\Haunted_House\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/newmac/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\ZuriB\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -56,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.403/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.404\\RuntimeIdentifierGraph.json"
       }
     }
   }

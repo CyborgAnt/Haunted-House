@@ -117,6 +117,7 @@ namespace Searches
     {
         public static void kitchenSearch(int choice)
         {
+            Console.Clear();
             switch (choice)
             {
                 case 1:
@@ -138,6 +139,8 @@ namespace Searches
                     WriteLine("You walk up to the spot on the wall where the yellow glow is coming from. You don't see any kind of opening but you do see a small, slightly discolored spot on the wall, a few feet away. You push it and a stone slab slides down into an until-then unseen groove. Inside the opening is what appears to be a small altar or shrine. There are dozens of small, lit candles - the source of the yellow light. There is a medium-sized silver cross on top of a two-tiered table. There are smaller crosses on either end of the lower tier, set into bases. On the top tier is... a box of bullets?");
                     WriteLine("You open the box and see 12 long, silver bullets. This is not a coincidence, you think to your self. You also realize that silver bullets need some kind of Gun to go with them... and possibly some target to use them on.");
                     WriteLine("You take the box of bullets and leave the shrine, heading back into the kitchen.");
+                    WriteLine("Press 'Enter' to continue.");
+                    Console.ReadLine();
                     FirstFloor.kitchen();
                     break;
                 case 4:
