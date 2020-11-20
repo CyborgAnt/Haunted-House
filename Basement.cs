@@ -50,7 +50,7 @@ public class Basement
         
         WriteLine("What would you like to do in the Den?");
 
-        WriteLine("1. Check the Table, 2. Check the bookcases, 3. Leave the Den.");
+        WriteLine("1. Check the Table\n2. Check the bookcases\n3. Leave the Den\nAnything Else: Quit the Program.");
         int denChoice = Int32.Parse(ReadLine());
 
         switch(denChoice)
@@ -78,7 +78,8 @@ public class Basement
                 stairs();
                 break;
             default:
-                break;
+                WriteLine("You have exited the program.");
+                return;
         }
     }
 
@@ -109,7 +110,7 @@ public class Basement
                 WriteLine("It is a journal-sized book, maybe 20 pages. As you skim through it, you see that it mainly deals with the details of summoning. Of particular interest are passages that deal with 2 dangers of failed summons.");
                 WriteLine("Press 'Enter' to continue.");
                 Console.ReadLine();
-                WriteLine("To summorize: 1. If the demon refuses to respond, it can cast a Curse back at the summoner, causing them to become a human-monster hybrid. 2. The demon can also attempt to possess, or outright kill, the summoner, if the summoner is weak of mind or will.");
+                WriteLine("To summarize: 1. If the demon refuses to respond, it can cast a Curse back at the summoner, causing them to become a human-monster hybrid. 2. The demon can also attempt to possess, or outright kill, the summoner, if the summoner is weak of mind or will.");
                 WriteLine("You return this disturbing book back to the shelf and leave the bookcase.");
                 WriteLine("Press 'Enter' to continue.");
                 Console.ReadLine();
@@ -163,7 +164,7 @@ public class Basement
         WriteLine("On the right side of the room, there is – WAS – a game table and chairs but said table is now in pieces; the chairs have been thrown here and there. There is a door on the far side of the right wall, and another door across the room from you. THAT door appears to be steel, iron, or some other kind of metal. Between the metal door and the door on the right wall, there are a couple of holes in the wall and more than a couple of grooves near the holes.");
         WriteLine("What would you like to do?");
 
-        WriteLine("1. Check the Metal Door, 2. Check behind the Bar, 3. Check the door on the right wall, 4. Check the Safe, 5. Go Back to the Stairs.");
+        WriteLine("1. Check the Metal Door\n2. Check behind the Bar\n3. Check the door on the right wall\n4. Check the Safe\n5. Go Back to the Stairs.");
         int entRoomChoice = Int32.Parse(ReadLine());
         
         Searches.EntertainmentRoom.entRoomSearch(entRoomChoice);

@@ -8,7 +8,7 @@ using static System.Console;
 
 namespace HouseStory
 {
-    class FirstFloor
+    public class FirstFloor
     {
         public static void entryway()
         {
@@ -169,6 +169,9 @@ namespace HouseStory
                 {
                     WriteLine("On the Mantle, you find a pamphlet: 'Reverse the Curse!'. There is a lot of occult information and drawings about various curses, their causes, and if they are reverseable.");
                     WriteLine("One passage particularly catches your attention, as most of it is highlighted:");
+                    
+                    WriteLine("Press 'Enter' to continue.");
+                    Console.Clear();
                     string[] lines = System.IO.File.ReadAllLines(@"pamphlet.txt");
 
                     System.Console.WriteLine("Contents of WriteLines2.txt = ");
@@ -193,13 +196,15 @@ namespace HouseStory
                     WriteLine("Press 'Enter' to continue.");
                     Console.ReadLine(); 
 
-                    bool protection = true;     // use in Final Battle
+                    int protection = 1;     // signifying that the Locket was found; use in Final Battle
                     FirstFloor.hall();
                     break;
                 } 
                 case 4:
                 {
                     WriteLine("You search the Loveseat. You find nothing under the cushions or in the back of the seat.");
+                    WriteLine("Press 'Enter' to continue.");
+                    Console.ReadLine(); 
                     livingRoom();
                     break;
                 }

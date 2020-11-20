@@ -129,6 +129,7 @@ namespace Searches
                         WriteLine("You take the clip but leave the note. You also take the GUN. Whoever 'she' is, it sounds like you might need the gun if you find her.");
                         WriteLine("You return your attention to the Entertainment Room. Press 'Enter' to continue.");
                         Console.ReadLine();
+                        var weapon = 1;     // signifying that you found the Gun
 
                         Basement.entertainmentRoom();
                     }

@@ -2,6 +2,7 @@ using System;
 using System.Text;
 using static System.Console;
 using static System.Math;
+using HouseStory;
 
 // Fight with Loup-Garou
 // set up HP, weapons, and choices
@@ -11,10 +12,19 @@ namespace FinalBoss
 {
     public class BossEncounter
     {
-        /* public static void chamberBoss()
+        /* public static void battleDecision()
         {
-            
-        } */
+            // check variables with 'if' statements
+            if(Searches.safe.weapon == 1)
+            {
+                if(FirstFloor.protection == 1)
+                    battleFull();
+                else
+                    battleNoLocket();    
+            }
+            else
+                battleNoGunOrLocket();
+        }   */            
 
         public static void battleNoLocket()
         {
@@ -88,7 +98,7 @@ namespace FinalBoss
             }
         }
 
-        public static void battleNoGunOrNeitherItem()
+        public static void battleNoGunOrLocket()
         {
             WriteLine("You realize that you don’t have a weapon to deal with this monster. You also are just wearing ‘normal’ clothes – not much protection. As you realize this, the door into the room closes shut.");
             WriteLine("You are now trapped in the room with the Loup-Garou. The Loup-Garou also realizes this, and starts to advance towards you, mal-intent in its eyes. It suddenly lunges at you, impossibly fast, with claws outstretched, impossibly strong. You feel an impact… and then there’s blackness, as you are literally torn in half.");
@@ -113,7 +123,7 @@ namespace FinalBoss
             WriteLine("Your shot lands true.");
             WriteLine("The shot hits the Loup-Garou in the upper forehead, knocking it off-course. it lands with a VERY heavy ‘thud’, rolling towards the iron door. The body starts to… change. It shrinks in height, the grey fur starts to recede, the face starts to shrink… what’s left is the body of a woman, at least 6 feet tall, with long red hair. And there is the strangest sight: the woman looks… content?");
             // clear
-            WriteLine("You identify the woman as [name], the seemingly-immortal owner of the house. You report back to the group that sent you, bringing the Gun and other items you might have found. The group is pleased with your work.");
+            WriteLine("You identify the woman as the one you've seen in various items around the house. See seemingly killed her husband - and possibly many more - before locking herself in the glyph-warded chamber. You report back to the group that sent you, bringing the Gun and other items you might have found. The group is pleased with your work.");
         }
 
     }
