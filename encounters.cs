@@ -35,12 +35,16 @@ public class Haunts
     public void handPassedThrough()
     {
         Console.WriteLine("The hand reaches for your chest... and passes through it. There were no physical effects but you are pretty shaken up. You hear, in the distance, a low, ominous chuckle. You continue on.");
+        Console.WriteLine("Press 'Enter' to continue.");
+        Console.ReadLine();
         var hallReturn = new FirstFloor();
         FirstFloor.hall();
     }
     public void handSurvived()
     {
         Console.WriteLine("The hand reaches for you... but you manage to dodge to one side. It passes through the wall of the hallway, and disappears. You hear a short but low chuckle from... somewhere. You decide to continue with the hall... ");
+        Console.WriteLine("Press 'Enter' to continue.");
+        Console.ReadLine();
         FirstFloor.hall();
         // test this decision
     }

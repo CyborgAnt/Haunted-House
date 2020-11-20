@@ -16,7 +16,7 @@ public class Basement
         WriteLine("The stairs end at a concrete landing. Through an archway, you see a 2nd smaller room. There are doors to the left, right, and straight ahead. The door ahead is wider and taller, but nothing else really differentiates the doors.");
         WriteLine("What would you like to do?");
 
-        WriteLine("1. Check the Left door, 2. Check the right door, 3. Check the door Ahead, 4. Go Back up the stairs");
+        WriteLine("1. Check the Left door\n2. Check the right door\n3. Check the door Ahead\n4. Go Back up the stairs\nAnything Else: Quit the Program.");
         int stairsChoice = Int32.Parse(ReadLine());
 
         switch(stairsChoice)
@@ -57,7 +57,11 @@ public class Basement
         {
             case 1:
                 // tableSearch
-                WriteLine("You look at the items that are on the table. In addition to what you saw before, you also see equipment used for making… potions. You, however, do not know how to use the equipment, so you leave it alone. There is nothing else on the table that you decide to investigate.");
+                WriteLine("You look at the items that are on the table. In addition to what you saw before, you also see equipment used for making… potions. You, however, do not know how to use the equipment, so you leave it alone. There is nothing else on the table that you decide to investigate, so you turn your attention back to the Den.");
+
+                Console.WriteLine("Press 'Enter' to continue.");
+                Console.ReadLine();
+                den();
                 break;
             case 2:
             {

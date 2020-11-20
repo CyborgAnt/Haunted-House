@@ -86,7 +86,7 @@ namespace HouseStory
 
         public static void hallContinue()
         {
-            WriteLine("At the end of the hall, you come upon another hall, running perpendicular to the Main Hall. On the left branch, there is a door on the right side; on the right branch, there is a door on the left side. These are likely bedrooms.");
+            WriteLine("At the end of the hall, you come upon another hall, running perpendicular to the Main Hall.\nOn the left branch, there is a door on the right side; on the right branch, there is a door on the left side. These are likely bedrooms.");
             WriteLine("Press 'Enter' to continue.");
             Console.ReadLine();
             WriteLine("What do you want to do next?");

@@ -2,6 +2,7 @@ using System;
 using System.Text;
 using static System.Console;
 using HouseStory;
+using FinalBoss;
 
 namespace Searches
 {
@@ -24,15 +25,51 @@ namespace Searches
             switch(choice)
             {
                 case 1:
+                {    
                     // Chamber - FINAL BATTLE(S)
+                    Console.Clear();
+                    WriteLine("You approach the large metal door; upon closer inspection, you see that the door is very thick and made of iron.\nAnd it’s a good thing because you hear a bellow from the other side of the door that is not remotely human.\nDespite that, you decide to open the door.");
+                    WriteLine("Press 'Enter' to continue.");
+                    Console.ReadLine();
+                    Console.Clear();
+                    WriteLine("You see a very large room, mostly empty - basically a chamber. Most of the walls are stone.\nIn front of the far wall is a table, possibly an altar, covered by some kind of dark purple cloth, trimmed in silver.\nOn that table are some leather-bound books and a couple of silver candle holders; there are tall, twin lit candles in each holder.");
+                    WriteLine("Press 'Enter' to continue.");
+                    Console.ReadLine();
+                    Console.Clear();
+                    WriteLine("You notice chalk or charcoal sketches on the left and right walls, on the inside of the door, and a very large drawing in front of the table.\nThese appear to be some form of Protection glyphs that you may have seen in a pamphlet earlier. \nThey consist of a triangle, small circles drawn around the points of the triangle, and a large circle surrounding the triangle-circle figure. The one on the floor is drawn in black and white chalk, is about 10-12 feet in diameter, and surrounds a monstrosity.");
+                    WriteLine("Press 'Enter' to continue.");
+                    Console.ReadLine();
+                    Console.Clear();
+                    WriteLine("Inside the floor glyph, in front of the table, stands a gaunt, humanoid figure, well over 7 feet tall. The tattered remains of pants and shoes cling to the lower body of the figure.\nThe upper body is lean muscle, covered by a sleek, grey coat of fur. The head… it LOOKS vaguely like a wolf, if a slightly feminine face was put on a wolf head and muzzle, and the jaws were about three times too wide and long.");
+                    
+                    WriteLine("Press 'Enter' to continue.");
+                    Console.ReadLine();
+                    Console.Clear();
+
+                    WriteLine("THIS is the source of the strange occurrences in this house.");
+                    WriteLine("This is a Loup-Garou!");
+                    
+                    // more code
+                    WriteLine("Press 'Enter' to continue.");
+                    Console.ReadLine();
+
+                    BossEncounter.battleNoLocket();
+                }    
                     break;
                 case 2:
                     Console.WriteLine("There are bottles of various liquors behind the bar but nothing else of interest.");
-                    // link back to Ent. Room
+                    WriteLine("Press 'Enter' to continue.");
+                    Console.ReadLine();
+                    Console.Clear();
+                    Basement.entertainmentRoom();
                     break;
                 case 3:
                     // bathroom2
-                    WriteLine("This bathroom is surprisngly intact, compare to other parts of the house. You don't find anything of interest ");
+                    WriteLine("This bathroom is surprisngly intact, compare to other parts of the house. You don't find anything of interest.");
+                    WriteLine("Press 'Enter' to continue.");
+                    Console.ReadLine();
+                    Console.Clear();
+                    Basement.entertainmentRoom();
                     // link back to Ent. Room
                     break;
                 case 4:
